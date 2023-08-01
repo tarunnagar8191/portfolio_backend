@@ -6,6 +6,13 @@ const port = 6565;
 
 app.use(express.json());
 
+// Configure static file serving
+app.use(express.static("build"));
+
+app.get("/", (req, res) => {
+  res.sendFile("index.html", { root: __dirname + "/build" });
+});
+
 app.post("/enquiries", async (req, res) => {
   const enquiryData = req.body;
   // Check if the request body contains data
