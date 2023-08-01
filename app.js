@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const enq = require("./modals/Enquiry.modal");
 const app = express();
-const port = 6565;
+const port = 8080;
 
 app.use(express.json());
 
